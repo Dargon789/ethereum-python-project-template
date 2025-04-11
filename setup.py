@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from setuptools import (
     find_packages,
     setup,
@@ -36,27 +35,28 @@ with open("./README.md") as readme:
 
 
 setup(
-    name="<PYPI_NAME>",
+    name="PY-EVM",
     # *IMPORTANT*: Don't manually change the version here. Use `make bump`, as described in readme
-    version="0.1.0-alpha.0",
-    description="""<PYPI_NAME>: <SHORT_DESCRIPTION>""",
+    version="0.5.0a0",
+    description="""<PY-EVM>: <Ethereum Virtual Machine>""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="The Ethereum Foundation",
     author_email="snakecharmers@ethereum.org",
-    url="https://github.com/ethereum/<REPO_NAME>",
+    url="https://github.com/ethereum/py-evm",
     include_package_data=True,
     install_requires=[
-        "eth-utils>=2",
+        "eth-utils>=1,<2",
+        "py-evm==0.5.0a0",
     ],
     python_requires=">=3.8, <4",
     extras_require=extras_require,
-    py_modules=["<MODULE_NAME>"],
+    py_modules=["eth"],
     license="MIT",
     zip_safe=False,
     keywords="ethereum",
     packages=find_packages(exclude=["tests", "tests.*"]),
-    package_data={"<MODULE_NAME>": ["py.typed"]},
+    package_data={"eth": ["py.typed"]},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
